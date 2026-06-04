@@ -90,7 +90,7 @@ def evaluate(tokens):
                     exit(1)
             index1 += 1
         return answer
-    index0 = 1
+    index0 = 0
     start_index = []
     while index0 < len(tokens):
         if tokens[index0]['type'] == 'LPAREN':
@@ -135,6 +135,9 @@ def run_test():
     test("2*(3+4*5)")
     test("2/(4*5)+6")
     test("0*(2/3)")
+    test("2*(3+4*(5-6))")
+    test("(((2+3)*4)+5)*6")
+    test("(((0)))")
     print("==== Test finished! ====\n")
 
 run_test()
